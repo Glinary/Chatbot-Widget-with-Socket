@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
     socket.on('message', (data) => {
         console.log('Message received:', data);
         // Send a response back to all connected clients
-        io.emit('response', `Server says: ${data}`);
+        socket.emit('response', `Server says: ${data}`);
     });
 
     socket.on('disconnect', () => {
